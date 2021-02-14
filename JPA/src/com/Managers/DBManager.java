@@ -16,7 +16,7 @@ public class DBManager {
 
     public Map<String, List<Field>> getAllTables() throws SQLException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
 
-        List<Entity> resultSet = queryManager.executeQuery(new String[]{"TABLE_NAME", "COLUMN_NAME", "DATA_TYPE", "COLUMN_KEY", "IS_NULLABLE", "CHARACTER_MAXIMUM_LENGTH"},"INFORMATION_SCHEMA.COLUMNS",new String[]{"TABLE_SCHEMA = 'JPA'"}, Entity.class);
+        List<Entity> resultSet = queryManager.executeQuery(new String[]{"TABLE_NAME", "COLUMN_NAME", "DATA_TYPE", "COLUMN_KEY", "IS_NULLABLE", "CHARACTER_MAXIMUM_LENGTH"},"INFORMATION_SCHEMA.COLUMNS",new String[]{"TABLE_SCHEMA = ''"}, Entity.class);
         Map<String, List<Field>> fields = new HashMap<>();
         for (Entity e : resultSet) {
             boolean isNullable = false;
